@@ -1,6 +1,8 @@
 import { LoginService, LoginRequestData, LoginResponseData } from "./interface";
 
 export class LoginApiService extends LoginService {
+  private refreshPromise: Promise<LoginResponseData> | null = null;
+
   public async login(payload: LoginRequestData): Promise<LoginResponseData> {
     const response: LoginResponseData = await this.fetchPost(
       "/login/",
@@ -31,20 +33,33 @@ export class LoginApiService extends LoginService {
     try {
       const parsedToken = this.parseJwt(token?.access);
 
-      if (new Date().getTime() / 1000 > parsedToken.exp) {
-        const response: LoginResponseData = await this.fetchPost(
-          "/refresh/",
-          { method: "POST" },
-          { refresh: token.refresh }
-        );
-        this.storeInLocalStorage(response);
+      if (new Date().getTime() / 1000 < parsedToken.exp) {
+        return this.retrieveFromLocalStorage();
       }
+
+      if (this.refreshPromise) {
+        await this.refreshPromise;
+        return this.retrieveFromLocalStorage();
+      }
+
+      this.refreshPromise = this.fetchPost(
+        "/refresh/",
+        { method: "POST" },
+        { refresh: token.refresh }
+      );
+
+      const response = await this.refreshPromise;
+      this.storeInLocalStorage(response);
+
       return this.retrieveFromLocalStorage();
+
     } catch (e) {
       console.log(e);
       this.logout();
+      return null;
+    } finally {
+      this.refreshPromise = null;
     }
-    return null;
   }
 
   private loginDataKey = "loginData";
@@ -70,7 +85,7 @@ export class LoginApiService extends LoginService {
   };
 
   // https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
-  private parseJwt(token: string) {
+  protected parseJwt(token: string) {
     var base64Url = token.split(".")[1];
     var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
     var jsonPayload = decodeURIComponent(

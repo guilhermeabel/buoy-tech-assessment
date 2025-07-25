@@ -75,7 +75,7 @@ In a production environment, with a proper JWT generating API, and a proper JWT 
 
 Provide an answer below:
 
-> DELETE THIS QUOTE AND REPLACE IT WITH YOUR ANSWER
+**We should not make unecessary requests to the auth service, as it can lead to rate limit exhaustion or throttling. It's also a waste of network, database and CPU resources, and the duplicate requests could lead to race conditions when trying to authenticate, resulting in a bad UX, bugs and mad users. If the refresh token endpoint generates a new valid token for each concurrent request, this could also be a security issue.**
 
 ---
 
