@@ -1,0 +1,217 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"firstName": "Emily",
+			"lastName": "Johnson",
+			"email": "emily.johnson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/emilys/128"
+		},
+		{
+			"id": 2,
+			"firstName": "Michael",
+			"lastName": "Williams",
+			"email": "michael.williams@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/michaelw/128"
+		},
+		{
+			"id": 3,
+			"firstName": "Sophia",
+			"lastName": "Brown",
+			"email": "sophia.brown@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/sophiab/128"
+		},
+		{
+			"id": 4,
+			"firstName": "Miles",
+			"lastName": "Cummerata",
+			"email": "miles.cummerata@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/milesc/128"
+		},
+		{
+			"id": 5,
+			"firstName": "Emma",
+			"lastName": "Miller",
+			"email": "emma.miller@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/emmam/128"
+		},
+		{
+			"id": 6,
+			"firstName": "Oliver",
+			"lastName": "Wilson",
+			"email": "oliver.wilson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/oliverw/128"
+		},
+		{
+			"id": 7,
+			"firstName": "Alexander",
+			"lastName": "Jones",
+			"email": "alexander.jones@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/alexj/128"
+		},
+		{
+			"id": 8,
+			"firstName": "Ava",
+			"lastName": "Taylor",
+			"email": "ava.taylor@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/avat/128"
+		},
+		{
+			"id": 9,
+			"firstName": "Ethan",
+			"lastName": "Martinez",
+			"email": "ethan.martinez@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/ethanm/128"
+		},
+		{
+			"id": 10,
+			"firstName": "Isabella",
+			"lastName": "Anderson",
+			"email": "isabella.anderson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/isabellaa/128"
+		},
+		{
+			"id": 11,
+			"firstName": "James",
+			"lastName": "Garcia",
+			"email": "james.garcia@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/jamesg/128"
+		},
+		{
+			"id": 12,
+			"firstName": "Charlotte",
+			"lastName": "Rodriguez",
+			"email": "charlotte.rodriguez@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/charlotter/128"
+		},
+		{
+			"id": 13,
+			"firstName": "Benjamin",
+			"lastName": "Hernandez",
+			"email": "benjamin.hernandez@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/benj/128"
+		},
+		{
+			"id": 14,
+			"firstName": "Amelia",
+			"lastName": "Moore",
+			"email": "amelia.moore@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/ameliam/128"
+		},
+		{
+			"id": 15,
+			"firstName": "Lucas",
+			"lastName": "Jackson",
+			"email": "lucas.jackson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/lucasj/128"
+		},
+		{
+			"id": 16,
+			"firstName": "Mia",
+			"lastName": "White",
+			"email": "mia.white@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/miaw/128"
+		},
+		{
+			"id": 17,
+			"firstName": "Noah",
+			"lastName": "Harris",
+			"email": "noah.harris@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/noahh/128"
+		},
+		{
+			"id": 18,
+			"firstName": "Harper",
+			"lastName": "Martin",
+			"email": "harper.martin@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/harperm/128"
+		},
+		{
+			"id": 19,
+			"firstName": "Liam",
+			"lastName": "Thompson",
+			"email": "liam.thompson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/liamt/128"
+		},
+		{
+			"id": 20,
+			"firstName": "Evelyn",
+			"lastName": "Garcia",
+			"email": "evelyn.garcia@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/evelyng/128"
+		},
+		{
+			"id": 21,
+			"firstName": "William",
+			"lastName": "Martinez",
+			"email": "william.martinez@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/williamm/128"
+		},
+		{
+			"id": 22,
+			"firstName": "Abigail",
+			"lastName": "Robinson",
+			"email": "abigail.robinson@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/abigailr/128"
+		},
+		{
+			"id": 23,
+			"firstName": "Mason",
+			"lastName": "Clark",
+			"email": "mason.clark@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/masonc/128"
+		},
+		{
+			"id": 24,
+			"firstName": "Elizabeth",
+			"lastName": "Rodriguez",
+			"email": "elizabeth.rodriguez@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/elizabethr/128"
+		},
+		{
+			"id": 25,
+			"firstName": "Logan",
+			"lastName": "Lewis",
+			"email": "logan.lewis@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/loganl/128"
+		},
+		{
+			"id": 26,
+			"firstName": "Ella",
+			"lastName": "Lee",
+			"email": "ella.lee@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/ellal/128"
+		},
+		{
+			"id": 27,
+			"firstName": "Jackson",
+			"lastName": "Walker",
+			"email": "jackson.walker@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/jacksonw/128"
+		},
+		{
+			"id": 28,
+			"firstName": "Scarlett",
+			"lastName": "Hall",
+			"email": "scarlett.hall@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/scarletth/128"
+		},
+		{
+			"id": 29,
+			"firstName": "Sebastian",
+			"lastName": "Allen",
+			"email": "sebastian.allen@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/sebastiana/128"
+		},
+		{
+			"id": 30,
+			"firstName": "Victoria",
+			"lastName": "Young",
+			"email": "victoria.young@x.dummyjson.com",
+			"image": "https://dummyjson.com/icon/victoriay/128"
+		}
+	],
+	"total": 30,
+	"skip": 0,
+	"limit": 30
+}

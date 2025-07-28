@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Table, Input, Avatar, Typography, Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import React, { useState, useMemo } from 'react';
+import { Table, Input, Avatar, Typography, Space, Row, Col, Card } from 'antd';
+import { SearchOutlined, UserOutlined } from '@ant-design/icons';
 import { useQuery } from '@tanstack/react-query';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import type { FilterValue } from 'antd/es/table/interface';
@@ -8,8 +8,7 @@ import UsersService from 'services/users';
 import { User } from 'services/users/interface';
 import { ContentLayout } from 'components/layout/content/contentLayout';
 
-const { Search } = Input;
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 interface TableParams {
 	pagination?: {
@@ -36,13 +35,15 @@ export function Users() {
 		queryFn: () => UsersService.getUsers(),
 	});
 
-	const users = usersResponse?.users || [];
+	const users = useMemo(() => usersResponse?.users || [], [usersResponse]);
 
-	const filteredUsers = users.filter(user => {
-		const firstNameMatch = user.firstName.toLowerCase().includes(firstNameFilter.toLowerCase());
-		const lastNameMatch = user.lastName.toLowerCase().includes(lastNameFilter.toLowerCase());
-		return firstNameMatch && lastNameMatch;
-	});
+	const filteredUsers = useMemo(() => {
+		return users.filter(user => {
+			const firstNameMatch = user.firstName.toLowerCase().includes(firstNameFilter.toLowerCase());
+			const lastNameMatch = user.lastName.toLowerCase().includes(lastNameFilter.toLowerCase());
+			return firstNameMatch && lastNameMatch;
+		});
+	}, [users, firstNameFilter, lastNameFilter]);
 
 	const handleTableChange: TableProps<User>['onChange'] = (
 		pagination,
@@ -63,39 +64,15 @@ export function Users() {
 			key: 'id',
 			width: 80,
 		},
-		{
+				{
 			title: 'First Name',
 			dataIndex: 'firstName',
 			key: 'firstName',
-			filterDropdown: () => (
-				<div style={{ padding: 8 }}>
-					<Search
-						placeholder="Search First Name"
-						value={firstNameFilter}
-						onChange={(e) => setFirstNameFilter(e.target.value)}
-						style={{ width: 200 }}
-						allowClear
-					/>
-				</div>
-			),
-			filterIcon: () => <UserOutlined style={{ color: firstNameFilter ? '#1890ff' : undefined }} />,
 		},
-		{
+				{
 			title: 'Last Name',
 			dataIndex: 'lastName',
 			key: 'lastName',
-			filterDropdown: () => (
-				<div style={{ padding: 8 }}>
-					<Search
-						placeholder="Search Last Name"
-						value={lastNameFilter}
-						onChange={(e) => setLastNameFilter(e.target.value)}
-						style={{ width: 200 }}
-						allowClear
-					/>
-				</div>
-			),
-			filterIcon: () => <UserOutlined style={{ color: lastNameFilter ? '#1890ff' : undefined }} />,
 		},
 		{
 			title: 'Name',
@@ -142,6 +119,51 @@ export function Users() {
 		<ContentLayout>
 			<Space direction="vertical" size="large" style={{ width: '100%' }}>
 				<Title level={2}>Users</Title>
+				<Card size="small">
+					<Row gutter={[16, 12]} align="middle" wrap>
+						<Col xs={24} sm={12} md={8} lg={6}>
+							<Input
+								placeholder="Search by First Name"
+								prefix={<SearchOutlined style={{ color: '#02f59d' }} />}
+								value={firstNameFilter}
+								onChange={(e) => setFirstNameFilter(e.target.value)}
+								allowClear
+								data-testid="first-name-filter"
+								style={{
+									borderColor: firstNameFilter ? '#02f59d' : undefined,
+									borderWidth: firstNameFilter ? 2 : 1
+								}}
+							/>
+						</Col>
+						<Col xs={24} sm={12} md={8} lg={6}>
+							<Input
+								placeholder="Search by Last Name"
+								prefix={<SearchOutlined style={{ color: '#02f59d' }} />}
+								value={lastNameFilter}
+								onChange={(e) => setLastNameFilter(e.target.value)}
+								allowClear
+								data-testid="last-name-filter"
+								style={{
+									borderColor: lastNameFilter ? '#02f59d' : undefined,
+									borderWidth: lastNameFilter ? 2 : 1
+								}}
+							/>
+						</Col>
+						{(firstNameFilter || lastNameFilter) && (
+							<Col xs={24} sm={24} md={8} lg={6}>
+								<Text type="secondary" style={{ 
+									fontSize: '13px',
+									background: 'rgba(2, 245, 157, 0.1)',
+									padding: '4px 8px',
+									borderRadius: '4px',
+									display: 'inline-block'
+								}}>
+									Showing {filteredUsers.length} of {users.length} users
+								</Text>
+							</Col>
+						)}
+					</Row>
+				</Card>
 
 				<Table<User>
 					columns={columns}
@@ -155,7 +177,7 @@ export function Users() {
 						showSizeChanger: false,
 						showQuickJumper: false,
 						showTotal: (total, range) =>
-							`${range[0]}-${range[1]} of ${total} users`,
+							`${range[0]}-${range[1]} of ${filteredUsers.length} users`,
 					}}
 					onChange={handleTableChange}
 					scroll={{ x: 800 }}
