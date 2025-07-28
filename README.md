@@ -13,7 +13,7 @@ The solution must be a cloud git repository, hosted on any cloud git tool of you
   - Have the exact code sample as it was provided, no changes whatsoever
 - From this point on, work on the problems exposed below as you like
 
-NOTE: In case you want to create a private git repository, please grant the user matthew@buoydevelopment.com full access to the repo. If you do so, please make it clear once you reply with your answer.
+NOTE: In case you want to create a private git repository, please grant the user <matthew@buoydevelopment.com> full access to the repo. If you do so, please make it clear once you reply with your answer.
 
 ---
 
@@ -93,7 +93,7 @@ Create a whole new page, called Users
 
 - It has to be visitable from the sidebar, with title Users
 - It should be rendered under the /users path
-- It should get the users info from https://dummyjson.com/users
+- It should get the users info from <https://dummyjson.com/users>
 - It should display an Ant Design table that:
   - Has the columns:
     - ID
@@ -109,9 +109,9 @@ Create a whole new page, called Users
 
 Reference:
 
-- https://tanstack.com/query/v3/
-- https://ant.design/components/overview/
-- https://dummyjson.com
+- <https://tanstack.com/query/v3/>
+- <https://ant.design/components/overview/>
+- <https://dummyjson.com>
 
 ### Acceptance criteria
 
@@ -126,8 +126,12 @@ Reference:
 - Deleting the text in the Last name filter returns the table to its original state
 
 ---
-
 > EXTRA POINTS: WRITE HERE ANY EXTRA COMMENTS OR NOTES YOU FIND RELEVANT
+
+To ensure we're delivering the Users feature correctly, I decided to create E2E tests to cover the steps described above.
+I noticed that the required first name and last name are not present in the API, so I mocked this data in the tests, to ensure the acceptance criteria is met.
+This approach ensures test reliability and prevents CI/CD pipeline failures due to external API changes.
+This is a common scenario where APIs or contracts may change, and we have to deal with the uncertainty in the way we believe is fit, and this was my approach.
 
 ---
 
@@ -137,7 +141,7 @@ Reference:
 
 - npm i
 - create a .env with the following key-value pairs
-  - REACT_APP_API_URL=https://fake-api-owmo.onrender.com/dev
+  - REACT_APP_API_URL=<https://fake-api-owmo.onrender.com/dev>
   - REACT_APP_FAKE_API_MODE=false
 - npm start
 
@@ -171,18 +175,18 @@ React
 
 Ant Design
 
-- Ant Design dynamic theme builder: https://ant.design/theme-editor
+- Ant Design dynamic theme builder: <https://ant.design/theme-editor>
 - Export the result of the builder above, merge with current content of "antdTheme.json"
 
 React Query
 
-- https://tanstack.com/query/latest/docs/react/overview
+- <https://tanstack.com/query/latest/docs/react/overview>
 - Brand depending hooks: useBrandIdSubscribedQuery
 - Complete CRUD hooks builder: useCRUDBuilder
 
 React Intl
 
-- https://formatjs.io/docs/react-intl/
+- <https://formatjs.io/docs/react-intl/>
 
 # Getting Started with Create React App
 

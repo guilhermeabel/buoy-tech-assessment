@@ -14,3 +14,24 @@ yarn-error.log*
 .npm/
 
 .env
+
+# E2E Testing
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# E2E Test Artifacts
+screenshots/
+videos/
+traces/
+*.png
+*.webm
+*.zip
+
+# Playwright browser binaries (if stored locally)
+.playwright/

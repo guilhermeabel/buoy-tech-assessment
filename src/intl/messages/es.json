@@ -16,7 +16,7 @@
   "navigation.crudExamples": "CrudExamples",
   "navigation.brandProfile": "Perfil de Marca",
   "navigation.userProfile": "Perfil de Usuario",
-
+  "navigation.users": "Usuarios",
   "page.brandProfile.anchor.basicInfo": "Info Basica",
   "page.brandProfile.anchor.regionInfo": "Info Region",
   "page.brandProfile.anchor.rss": "RSS",

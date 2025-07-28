@@ -15,6 +15,7 @@ const basebreadcrumbNameMap: Record<string, string> = {
   [AppPath.home]: "navigation.dashboard",
   [AppPath.brandProfile]: "navigation.brandProfile",
   [AppPath.userProfile]: "navigation.userProfile",
+  [AppPath.users]: "navigation.users",
 };
 
 export function LocationBreadcrumbs({

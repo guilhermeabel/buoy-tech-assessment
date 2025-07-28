@@ -1,8 +1,7 @@
-import { DashboardOutlined, UserOutlined } from "@ant-design/icons";
-import { Layout, Menu, Avatar, theme, Row, Col, Image } from "antd";
+import { DashboardOutlined, UserOutlined, TeamOutlined } from "@ant-design/icons";
+import { Layout, Menu, theme, Row, Col } from "antd";
 import { AppPath } from "components";
 import { useAppNavigate } from "hooks";
-import { header_logo, header_logo_collapsed } from "assets";
 import { AppLayoutContext } from "..";
 import { useContext } from "react";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
@@ -27,6 +26,11 @@ export function AppSidebar({ collapsed, setCollapsed }: AppSidebarProps) {
       key: AppPath.home,
       label: "Dashboard",
       icon: <DashboardOutlined />,
+    },
+    {
+      key: AppPath.users,
+      label: "Users",
+      icon: <TeamOutlined />,
     },
   ];
 
@@ -70,7 +74,7 @@ export function AppSidebar({ collapsed, setCollapsed }: AppSidebarProps) {
             mode="inline"
             items={allMenuItems}
             onClick={(event) => navigate(event.key)}
-            //warning: [antd: Menu] `inlineCollapsed` not control Menu under Sider. Should set `collapsed` on Sider instead.
+          //warning: [antd: Menu] `inlineCollapsed` not control Menu under Sider. Should set `collapsed` on Sider instead.
           />
         </Col>
       </Row>

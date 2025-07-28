@@ -10,6 +10,7 @@ export enum AppPath {
   home = "/dashboard",
   brandProfile = "/brandProfile",
   userProfile = "/profile",
+  users = "/users",
   crud = "/",
 }
 
